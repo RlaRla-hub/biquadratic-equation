@@ -62,7 +62,7 @@ namespace biquadratic_equation_1
                 x4 = 0;
                 Console.WriteLine("x1, x2 не существует");
                 Console.WriteLine("x3:{0}", x3);
-                Console.WriteLine("x4: {0}", x4)
+                Console.WriteLine("x4: {0}", x4);
                 Console.ReadKey();
                 Environment.Exit(0);
             }
@@ -136,6 +136,7 @@ namespace biquadratic_equation_1
 
             try//обработка исключений, 
             {
+                Console.Title = "Бочарова Маргарита РТ5-31Б";
                 Console.WriteLine("Введите коэффициент а: ");//введение коэффициентов с клавиатуры
                 string num = Console.ReadLine();
                 double a = Convert.ToDouble(num);
