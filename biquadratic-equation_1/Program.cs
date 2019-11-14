@@ -131,22 +131,33 @@ namespace biquadratic_equation_1
             }
         }
 
+        static double Vvod()
+        {
+            while (true)
+            {
+                double i;
+                if (double.TryParse(Console.ReadLine(), out i))
+                    return i;
+                else
+                    Console.Write("Ошибка ввода! Введите еще раз: ");
+            }
+        }
+
+
         static void Main(string[] args)
         {
+            Console.Title = "Бочарова Маргарита РТ5-31Б";
+            Console.Write("Введите a: ");
+            double a = Vvod();
+     
+            Console.Write("Введите b: ");
+            double b = Vvod();
 
-            try//обработка исключений, 
-            {
-                Console.Title = "Бочарова Маргарита РТ5-31Б";
-                Console.WriteLine("Введите коэффициент а: ");//введение коэффициентов с клавиатуры
-                string num = Console.ReadLine();
-                double a = Convert.ToDouble(num);
-                Console.WriteLine("Введите коэффициент b: ");
-                num = Console.ReadLine();
-                double b = Convert.ToDouble(num);
-                Console.WriteLine("Введите коэффициент c: ");
-                num = Console.ReadLine();
-                double c = Convert.ToDouble(num);
-             
+            Console.Write("Введите c: ");
+            double c = Vvod();
+
+            Console.ReadKey();
+
                 double t1 = 0;
                 double t2 = 0;
                 double dis;
@@ -203,14 +214,14 @@ namespace biquadratic_equation_1
                     t2 = (((-1) * b) - Math.Sqrt(dis)) / (2 * a);
                     the_computation_of_the_roots(t1, t2);
                 }
+                if (a == 0 && b != 0 && c == 0)
+                {
+                    t1 = 0;
+                    t2 = 0;
+                    the_computation_of_the_roots(t1, t2);
+                }
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Исключение: {ex.Message}");
-            }
-            Console.ReadKey();
-
-        } 
+           
+        }
     }
 }
